@@ -4,9 +4,12 @@ blueprint to implement a library in python. This library may be deployed on pip.
 
 * code to share between several applications
 * domain specific library
+* compliant with different python version
 * ...
 
-## Getting started
+[![Build Status](https://travis-ci.org/FabienArcellier/blueprint-library-pip.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-library-pip)
+
+## Getting started
 
 1. clone this repository
 
@@ -14,15 +17,15 @@ blueprint to implement a library in python. This library may be deployed on pip.
 
 3. use your library identifier as module name
 
-    replace `mylib`, `mylib_tests` by your own identifier
-    change `Makefile` and `setup.py`
+    * replace `mylib`, `mylib_tests` by your own identifier
+    * change `.coveragerc`, `Makefile`, `setup.py`, `tox.ini`
 
 ## The latest version
 
 You can find the latest version to ...
 
 ```bash
-git clone ...
+git clone https://github.com/FabienArcellier/blueprint-library-pip.git
 ```
 
 ## Usage
@@ -36,6 +39,19 @@ mylib.hello_world()
 ```
 
 ## Developper guideline
+
+```
+$ make
+coverage                       output the code coverage in htmlcov/index.html
+help                           provides cli help for this makefile (default)
+install_requirements_dev       install pip requirements for development
+install_requirements           install pip requirements based on requirements.txt
+lint                           run pylint
+tests                          run automatic tests
+tox                            run tests described in tox.ini on multiple python environments
+update_requirements            update the project dependencies based on setup.py declaration
+venv                           build a virtual env for python 3 in ./venv
+```
 
 ### Install development environment
 
@@ -54,7 +70,7 @@ make install_requirements
 
 ### Initiate or update the library requirements
 
-If you want to initiate or update all the requirements `install_requires` declared in `setup.py` 
+If you want to initiate or update all the requirements `install_requires` declared in `setup.py`
 and freeze a new requirements.txt, use this command
 
 ```bash
@@ -87,4 +103,24 @@ make tests
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+MIT License
+
+Copyright (c) 2018 Fabien Arcellier
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

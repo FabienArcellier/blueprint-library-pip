@@ -17,16 +17,17 @@ tests: ## run automatic tests
 
 .PHONY: lint
 lint: ## run pylint
-	. venv/bin/activate; pylint --rcfile=.rcfile $(APPLICATION_MODULE)
+	. venv/bin/activate; pylint --rcfile=.pylintrc $(APPLICATION_MODULE)
 
 .PHONY: coverage
-coverage: coverage_run coverage_report # run the code coverage
+coverage: coverage_run coverage_html ## output the code coverage in htmlcov/index.html
 
 coverage_run :
-	. venv/bin/activate; coverage run -m unittest discover $(TEST_MODULE)/units
+	. venv/bin/activate; coverage run -m unittest discover $(TEST_MODULE)
 
-coverage_report:
-	. venv/bin/activate; coverage report
+coverage_html:
+	. venv/bin/activate; coverage html
+	@echo "$ browse htmlcov/index.html"
 
 .PHONY: clean
 clean :
@@ -37,21 +38,21 @@ clean :
 	rm -f MANIFEST
 	find -name __pycache__ -print0 | xargs -0 rm -rf
 
-.PHONY: freeze
-freeze: ## freeze the dependencies version in requirements.txt
-	. venv/bin/activate; pip freeze | @grep -v "$(APPLICATION_MODULE)" > requirements.txt
+.PHONY: tox
+tox: ## run tests described in tox.ini on multiple python environments
+	. venv/bin/activate; tox
 
 .PHONY: update_requirements
 update_requirements: ## update the project dependencies based on setup.py declaration
 	rm -rf venv
-	$(MAKE) venv
+	virtualenv venv -p python3
 	. venv/bin/activate; pip install .
-	$(MAKE) freeze
+	. venv/bin/activate; pip freeze | grep -v "$(APPLICATION_MODULE)" > requirements.txt
 
 .PHONY: install_requirements_dev
 install_requirements_dev: venv ## install pip requirements for development
 	. venv/bin/activate; pip install -r requirements.txt
-	. venv/bin/activate; pip install -r requirements_dev.txt
+	. venv/bin/activate; pip install -e.[dev]
 
 .PHONY: install_requirements
 install_requirements: venv ## install pip requirements based on requirements.txt
