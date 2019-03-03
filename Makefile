@@ -42,21 +42,23 @@ clean :
 tox: ## run tests described in tox.ini on multiple python environments
 	. venv/bin/activate; tox
 
-.PHONY: update_requirements
-update_requirements: ## update the project dependencies based on setup.py declaration
+.PHONY: freeze_requirements
+freeze_requirements: ## update the project dependencies based on setup.py declaration
 	rm -rf venv
-	virtualenv venv -p python3
-	. venv/bin/activate; pip install .
-	. venv/bin/activate; pip freeze | grep -v "$(APPLICATION_MODULE)" > requirements.txt
+	$(MAKE) venv
+	. venv/bin/activate; pip install --editable .
+	. venv/bin/activate; pip freeze --exclude-editable > requirements.txt
 
 .PHONY: install_requirements_dev
 install_requirements_dev: venv ## install pip requirements for development
 	. venv/bin/activate; pip install -r requirements.txt
-	. venv/bin/activate; pip install -e.[dev]
+	. venv/bin/activate; pip install -e .[dev]
 
 .PHONY: install_requirements
-install_requirements: venv ## install pip requirements based on requirements.txt
+install_requirements: ## install pip requirements based on requirements.txt
 	. venv/bin/activate; pip install -r requirements.txt
+	. venv/bin/activate; pip install -e .
+
 
 .PHONY: venv
 venv: ## build a virtual env for python 3 in ./venv

@@ -43,13 +43,13 @@ mylib.hello_world()
 ```
 $ make
 coverage                       output the code coverage in htmlcov/index.html
+freeze_requirements            update the project dependencies based on setup.py declaration
 help                           provides cli help for this makefile (default)
 install_requirements_dev       install pip requirements for development
 install_requirements           install pip requirements based on requirements.txt
 lint                           run pylint
 tests                          run automatic tests
 tox                            run tests described in tox.ini on multiple python environments
-update_requirements            update the project dependencies based on setup.py declaration
 venv                           build a virtual env for python 3 in ./venv
 ```
 
@@ -74,7 +74,7 @@ If you want to initiate or update all the requirements `install_requires` declar
 and freeze a new requirements.txt, use this command
 
 ```bash
-make update_requirements
+make freeze_requirements
 ```
 
 ### Activate the python environment
