@@ -3,6 +3,7 @@
 import unittest
 from mylib.__main__ import main
 
+
 class AppTest(unittest.TestCase):
     def setUp(self):
         pass
