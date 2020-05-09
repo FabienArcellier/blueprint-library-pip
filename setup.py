@@ -16,7 +16,6 @@ setup(
         'dev': [
             'pylint',
             'coverage',
-            'tox',
             'twine'
         ]
     },

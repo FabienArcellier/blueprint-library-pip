@@ -18,7 +18,7 @@ blueprint to implement a library in python. This library may be deployed on pip.
 3. use your library identifier as module name
 
     * replace `mylib`, `mylib_tests` by your own identifier
-    * change `.coveragerc`, `Makefile`, `setup.py`, `tox.ini`
+    * change `.coveragerc`, `Makefile`, `Pipfile`, `setup.py`, `tox.ini`
 
 ## The latest version
 
@@ -42,15 +42,16 @@ mylib.hello_world()
 
 ```
 $ make
+activate                       activate the virtualenv associate with this project
 coverage                       output the code coverage in htmlcov/index.html
-freeze_requirements            update the project dependencies based on setup.py declaration
 help                           provides cli help for this makefile (default)
 install_requirements_dev       install pip requirements for development
 install_requirements           install pip requirements based on requirements.txt
 lint                           run pylint
 tests                          run automatic tests
-tox                            run tests described in tox.ini on multiple python environments
-venv                           build a virtual env for python 3 in ./venv
+tests_units                    run only unit tests
+tox                            run existing test suite on python 2.7, python 3.6 and python 3.7
+update_requirements            update the project dependencies based on setup.py declaration
 ```
 
 ### Install development environment
@@ -71,10 +72,10 @@ make install_requirements
 ### Initiate or update the library requirements
 
 If you want to initiate or update all the requirements `install_requires` declared in `setup.py`
-and freeze a new requirements.txt, use this command
+and freeze a new `Pipfile.lock`, use this command
 
 ```bash
-make freeze_requirements
+make update_requirements
 ```
 
 ### Activate the python environment
