@@ -8,6 +8,3 @@ mylib = {path = ".",extras = ["dev"], editable = true}
 
 [packages]
 mylib = {path = ".", editable = true}
-
-[requires]
-python_version = "3.7"
