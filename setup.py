@@ -6,7 +6,7 @@ from setuptools import find_packages
 setup(
     name='mylib',
     version='1.0.0',
-    packages=find_packages(exclude=["*_tests"]),
+    packages=find_packages(exclude=["*_tests.*", "*_tests"]),
     license='MIT license',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
