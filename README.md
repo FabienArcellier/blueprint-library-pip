@@ -7,7 +7,7 @@ blueprint to implement a library in python. This library may be deployed on pip.
 * compliant with different python version
 * ...
 
-[![Build Status](https://travis-ci.org/FabienArcellier/blueprint-library-pip.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-library-pip)
+[![ci](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/ci.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/ci.yml)
 
 ## Getting started
 
