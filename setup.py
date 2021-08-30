@@ -1,11 +1,9 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from setuptools import setup
 from setuptools import find_packages
 
 setup(
     name='mylib',
-    version='1.0.0',
+    version='0.1',
     packages=find_packages(exclude=["*_tests.*", "*_tests"]),
     license='MIT license',
     long_description=open('README.md').read(),
@@ -15,6 +13,7 @@ setup(
     extras_require={
         'dev': [
             'alfred-cli',
+            'build',
             'pylint',
             'coverage',
             'twine'

@@ -41,7 +41,6 @@ mylib.hello_world()
 ## Developper guideline
 
 ```
-$ make
 activate                       activate the virtualenv associate with this project
 coverage                       output the code coverage in htmlcov/index.html
 help                           provides cli help for this makefile (default)
@@ -50,7 +49,7 @@ install_requirements           install pip requirements based on requirements.tx
 lint                           run pylint
 tests                          run automatic tests
 tests_units                    run only unit tests
-tox                            run existing test suite on python 2.7, python 3.6 and python 3.7
+twine                          publish on pypi
 update_requirements            update the project dependencies based on setup.py declaration
 ```
 
