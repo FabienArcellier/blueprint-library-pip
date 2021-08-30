@@ -14,6 +14,7 @@ setup(
     ],
     extras_require={
         'dev': [
+            'alfred-cli',
             'pylint',
             'coverage',
             'twine'

@@ -29,7 +29,7 @@ clean : ## remove all transient directories and files
 
 .PHONY: dist
 dist:
-	pipenv run python setup.py bdist sdist
+	pipenv run alfred build
 
 # @see http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 .DEFAULT_GOAL := help
@@ -58,8 +58,7 @@ tests_units: ## run only unit tests
 
 .PHONY: twine
 twine: ## publish on pypi
-	$(MAKE) dist
-	pipenv run twine upload dist/*
+	pipenv run alfred twine
 
 .PHONY: update_requirements
 update_requirements: ## update the project dependencies based on setup.py declaration
