@@ -49,7 +49,7 @@ Use make to instanciate a python virtual environment in ./venv and install the
 python dependencies.
 
 ```bash
-make install_requirements_dev
+pipenv install --dev
 ```
 
 ### Update release dependencies
@@ -58,7 +58,7 @@ Use make to instanciate a python virtual environment in ./venv and freeze
 dependencies version on requirement.txt.
 
 ```bash
-make freeze_requirements
+pipenv update
 ```
 
 ### Activate the python environment
@@ -67,7 +67,7 @@ When you setup the requirements, a `venv` directory on python 3 is created.
 To activate the venv, you have to execute :
 
 ```bash
-make activate
+pipenv shell
 ```
 
 ### Run the continuous integration process
@@ -76,7 +76,8 @@ Before commit or send a pull request, you have to execute `pylint` to check the 
 of your code and run the unit tests to validate the behavior.
 
 ```bash
-make ci
+$ pipenv shell
+$ alfred ci
 ```
 
 ## Contributors
@@ -87,7 +88,7 @@ make ci
 
 MIT License
 
-Copyright (c) 2018 Fabien Arcellier
+Copyright (c) 2018-2022 Fabien Arcellier
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
