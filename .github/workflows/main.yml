@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                python-version: [3.6, 3.7, 3.8]
+                python-version: [3.8, 3.9]
 
         steps:
             -   uses: actions/checkout@v2
@@ -22,10 +22,6 @@ jobs:
                     sudo pip install pipenv
                     pipenv install --dev
 
-            -   name: lint
+            -   name: continuous integration
                 run:
-                    make lint
-
-            -   name: tests
-                run:
-                    make tests
+                    pipenv run alfred ci
