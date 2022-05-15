@@ -1,5 +1,0 @@
-[report]
-show_missing = True
-omit =
-    mylib_tests/*
-    venv/*

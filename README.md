@@ -17,8 +17,8 @@ blueprint to implement a library in python. This library may be deployed on pip.
 
 3. use your library identifier as module name
 
-    * replace `mylib`, `mylib_tests` by your own identifier
-    * change `.coveragerc`, `Makefile`, `Pipfile`, `setup.py`, `tox.ini`
+    * replace `src/mylib` by your own identifier
+    * change `Pipfile`, `setup.cfg`
 
 ## The latest version
 
@@ -41,16 +41,7 @@ mylib.hello_world()
 ## Developper guideline
 
 ```
-activate                       activate the virtualenv associate with this project
-coverage                       output the code coverage in htmlcov/index.html
-help                           provides cli help for this makefile (default)
-install_requirements_dev       install pip requirements for development
-install_requirements           install pip requirements based on requirements.txt
-lint                           run pylint
-tests                          run automatic tests
-tests_units                    run only unit tests
-twine                          publish on pypi
-update_requirements            update the project dependencies based on setup.py declaration
+pipenv shell
 ```
 
 ### Install development environment
@@ -59,13 +50,13 @@ Use make to instanciate a python virtual environment in ./venv and install the
 python dependencies.
 
 ```bash
-make install_requirements_dev
+pipenv install --dev
 ```
 
 ### Install production environment
 
 ```bash
-make install_requirements
+pipenv install
 ```
 
 ### Initiate or update the library requirements
@@ -74,27 +65,15 @@ If you want to initiate or update all the requirements `install_requires` declar
 and freeze a new `Pipfile.lock`, use this command
 
 ```bash
-make update_requirements
-```
-
-### Activate the python environment
-
-When you setup the requirements, a `venv` directory on python 3 is created.
-To activate the venv, you have to execute :
-
-```bash
-make venv
-source venv/bin/activate
+pipenv update
 ```
 
 ### Run the linter and the unit tests
 
-Before commit or send a pull request, you have to execute `pylint` to check the syntax
-of your code and run the unit tests to validate the behavior.
+Before commit or send a pull request, you have to execute the continuous integration process.
 
 ```bash
-make lint
-make tests
+alfred ci
 ```
 
 ## Contributors
@@ -105,7 +84,7 @@ make tests
 
 MIT License
 
-Copyright (c) 2018 Fabien Arcellier
+Copyright (c) 2018-2022 Fabien Arcellier
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

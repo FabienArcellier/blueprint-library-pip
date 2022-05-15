@@ -1,3 +1,4 @@
+# more information : https://editorconfig.org/
 root = true
 
 [*]
@@ -7,6 +8,9 @@ trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
 indent_size = 4
+
+[*.py]
+max_line_length = 120
 
 [Makefile]
 indent_style = tab

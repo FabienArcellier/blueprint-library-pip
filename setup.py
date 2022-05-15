@@ -1,29 +1,9 @@
-from setuptools import setup
-from setuptools import find_packages
+#!/usr/bin/env python
+# This file is required with pipenv to setup the project in editable mode with `pipenv install`
+#
+# Without, the installation trigger :
+#   A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build
+import setuptools
 
-setup(
-    name='mylib',
-    version='0.1',
-    packages=find_packages(exclude=["*_tests.*", "*_tests"]),
-    license='MIT license',
-    long_description=open('README.md').read(),
-    long_description_content_type='text/markdown',
-    install_requires = [
-    ],
-    extras_require={
-        'dev': [
-            'alfred-cli',
-            'build',
-            'pylint',
-            'coverage',
-            'twine'
-        ]
-    },
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-        "Intended Audience :: Developers",
-        "Environment :: Console"
-    ]
-)
+if __name__ == "__main__":
+    setuptools.setup()
