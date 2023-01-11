@@ -30,35 +30,32 @@ git clone https://github.com/FabienArcellier/blueprint-python3.git
 You can run the application with the following command
 
 ```bash
-python main.py
+python src/app/main.py
 ```
 
 ## Developper guideline
 
 ### Add a dependency
 
-Write the dependency in ``setup.py``. As it's the distribution standard for pypi,
-I prefer to keep ``setup.py`` as single source of truth.
-
-I encourage avoiding using instruction as ``pipenv install requests`` to register
-a new library. You would have to write your dependency in both ``setup.py`` and ``Pipfile``.
-
+``bash
+poetry add requests
+``
 ### Install development environment
 
 Use make to instanciate a python virtual environment in ./venv and install the
 python dependencies.
 
 ```bash
-pipenv install --dev
+poetry install
 ```
 
 ### Update release dependencies
 
 Use make to instanciate a python virtual environment in ./venv and freeze
-dependencies version on requirement.txt.
+dependencies version
 
 ```bash
-pipenv update
+poetry update update
 ```
 
 ### Activate the python environment
@@ -67,7 +64,7 @@ When you setup the requirements, a `venv` directory on python 3 is created.
 To activate the venv, you have to execute :
 
 ```bash
-pipenv shell
+poetry shell
 ```
 
 ### Run the continuous integration process
@@ -76,8 +73,7 @@ Before commit or send a pull request, you have to execute `pylint` to check the 
 of your code and run the unit tests to validate the behavior.
 
 ```bash
-$ pipenv shell
-$ alfred ci
+$ poetry run alfred ci
 ```
 
 ## Contributors

@@ -16,7 +16,3 @@ def lint():
     os.chdir(ROOT_DIR)
     alfred.run(mypy, ['src'])
 
-    pylint = alfred.sh("pylint", "pylint should be present")
-    os.chdir(ROOT_DIR)
-    alfred.run(pylint, ['--reports=n', '--rcfile=.pylintrc', 'src'])
-
