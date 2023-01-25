@@ -33,6 +33,16 @@ You can run the application with the following command
 python src/app/main.py
 ```
 
+### Run in docker container
+
+Vous pouvez exécuter ce template avec docker. L'image fabriquée peut être distribuée et utiliser pour déployer votre application
+sur un environnement de production. 
+
+```bash
+docker-compose build
+docker-compose run app
+```
+
 ## Developper guideline
 
 ### Add a dependency

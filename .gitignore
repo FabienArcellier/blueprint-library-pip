@@ -2,12 +2,11 @@
 # the project directory by default
 #
 # @see https://stackoverflow.com/a/57922911
-/.venv/**
-!/.venv/.gitkeep
-
-
+/.venv
 __pycache__
+.mypy_cache
 **/*.pyc
 /.idea
+/build
 /dist
 *.egg-info
