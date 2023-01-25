@@ -19,9 +19,10 @@ jobs:
 
       - name: update package manager & install python3 environment
         run: |
-          sudo pip install pipenv
-          pipenv install --dev
+          sudo pip install poetry
+          poetry config virtualenvs.create false
+          poetry install
 
       - name: continuous integration
         run:
-          pipenv run alfred ci
+          alfred ci
