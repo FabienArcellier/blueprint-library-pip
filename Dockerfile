@@ -1,13 +1,22 @@
-FROM python:3.10
+FROM python:3.10 as builder
 
-RUN pip install poetry
-RUN mkdir -p /app/src
+RUN mkdir -p /app
+WORKDIR /app
+RUN pip3 install poetry
 
 COPY . /app
+RUN poetry install
 
+FROM python:3.10-bullseye as base
+
+COPY --from=builder /app /app
+
+RUN groupadd --gid 1000 user && \
+    useradd --create-home -u 1000 -g 1000 user && \
+    chown -R user:user /app
+
+USER user
 WORKDIR /app
 
-RUN poetry config virtualenvs.create false \
-  && poetry install --without dev
-
+ENV PATH="/app/.venv/bin:$PATH"
 CMD ["python", "src/app/main.py"]
