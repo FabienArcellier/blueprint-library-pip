@@ -88,6 +88,12 @@ of your code and run the unit tests to validate the behavior.
 $ poetry run alfred ci
 ```
 
+### Rebuild the blueprint from scratch
+
+I have to regularly rebuild it to update dependencies.
+
+[read rebuild the bluperint from scratch](./rebuild%20the%20blueprint%20from%20scratch.md)
+
 ## Contributors
 
 * Fabien Arcellier
