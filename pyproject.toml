@@ -19,7 +19,7 @@ python = "^3.8"
 
 
 [tool.poetry.group.dev.dependencies]
-alfred-cli = "^1.2.0"
+alfred-cli = "^2.0.0"
 mypy = "^0.991"
 pytest = "^7.2.0"
 
