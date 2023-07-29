@@ -19,9 +19,9 @@ jobs:
 
       - name: update package manager & install python3 environment
         run: |
-          sudo pip install poetry==1.4.2
+          sudo pip install poetry
           poetry install
 
       - name: continuous integration
         run:
-          alfred ci
+          poetry run alfred ci
