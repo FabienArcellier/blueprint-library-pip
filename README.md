@@ -35,8 +35,7 @@ python src/app/main.py
 
 ### Run in docker container
 
-Vous pouvez exécuter ce template avec docker. L'image fabriquée peut être distribuée et utiliser pour déployer votre application
-sur un environnement de production. 
+You can run this template with docker. The manufactured image can be distributed and used to deploy your application to a production environment.
 
 ```bash
 docker-compose build
@@ -94,7 +93,7 @@ $ poetry run alfred ci
 
 MIT License
 
-Copyright (c) 2018-2022 Fabien Arcellier
+Copyright (c) 2018-2023 Fabien Arcellier
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
