@@ -1,6 +1,6 @@
 ## blueprint-python3
 
-[![ci](https://github.com/FabienArcellier/blueprint-python3/actions/workflows/main.yml/badge.svg)](https://github.com/FabienArcellier//blueprint-python3/actions/workflows/main.yml)
+[![ci](https://github.com/FabienArcellier/blueprint-python3/actions/workflows/main.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-python3/actions/workflows/main.yml)
 
 
 blueprint to implement a simple spike with python3
