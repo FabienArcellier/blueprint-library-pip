@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "blueprint-python3"
-version = "1.0.0"
 description = "blueprint to implement a python application"
 authors = ["Fabien Arcellier <fabien.arcellier@gmail.com>"]
 license = "MIT"
+version = "1.0.0"
 readme = "README.md"
 packages = [{include = "app", from = "src"}]
 classifiers = [

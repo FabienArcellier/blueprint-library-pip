@@ -17,6 +17,9 @@ The implementation is compatible with python 3
 
 2. remove .git directory
 
+* [prepare the blueprint to start a new project](./prepare%20the%20blueprint.md)
+
+
 ## The latest version
 
 You can find the latest version to ...
