@@ -1,7 +1,4 @@
-import os
-
 import alfred
-import click
 
 @alfred.command("ci", help="workflow to execute the continuous integration process")
 def ci():

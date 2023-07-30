@@ -1,5 +1,3 @@
-import os
-
 import alfred
 
 @alfred.command("run", help="execute the application")

@@ -1,5 +1,3 @@
-import os
-
 import alfred
 
 @alfred.command("docker:build", help="workflow to build docker container")

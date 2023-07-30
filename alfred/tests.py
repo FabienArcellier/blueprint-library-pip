@@ -1,7 +1,4 @@
-import os
-
 import alfred
-import click
 
 
 @alfred.command("tests", help="workflow to execute all automatic tests")
