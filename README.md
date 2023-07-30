@@ -15,6 +15,8 @@ blueprint to implement a library in python. This library may be deployed on pip.
 
 2. remove .git directory
 
+3. create a new git repository and push it on github
+
 * [prepare the blueprint to start a new project](./prepare%20the%20blueprint.md)
 
 
@@ -95,7 +97,7 @@ $ poetry run alfred ci
 
 ### Rebuild the blueprint from scratch
 
-I have to regularly rebuild it to update dependencies.
+I have to regularly rebuild it to update dependencies and refresh the skeleton documentation.
 
 * [maintain this blueprint](./maintain%20this%20blueprint.md)
 
