@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "blueprint-python3"
-description = "blueprint to implement a python application"
+name = "blueprint-library-pip"
+description = "blueprint to implement a library in python to deploy on pypi"
 authors = ["Fabien Arcellier <fabien.arcellier@gmail.com>"]
 license = "MIT"
 version = "1.0.0"
 readme = "README.md"
-packages = [{include = "app", from = "src"}]
+packages = [{include = "lib", from = "src"}]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -16,7 +16,6 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-python-dotenv = "^1.0.0"
 
 
 
