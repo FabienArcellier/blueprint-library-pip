@@ -3,9 +3,6 @@ import os
 import alfred
 import click
 
-ROOT_DIR = os.path.realpath(os.path.join(__file__, "..", ".."))
-
-
 @alfred.command("ci", help="workflow to execute the continuous integration process")
 def ci():
     """
