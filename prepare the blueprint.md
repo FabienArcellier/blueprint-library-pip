@@ -13,7 +13,7 @@ license = "MIT"
 
 2. change the package name
 
-* change package name from `srclib` to desired name `src/my_custom_lib`
+* change package name from `src/lib` to desired name `src/my_custom_lib`
 
 3. remove the markdown files relative to the blueprint
 
@@ -45,17 +45,17 @@ The ![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg) command shoul
 packages = [{include = "my_custom_lib", from = "src"}]
 ```
 
-4. configure the credential of pypi on github repository for github action
+5. configure the credential of pypi on github repository for github action
 
 In this step, I should register the token of the pypi account. The token will be used by github action to publish the library. The configuration is done in github settings. The variable `TWINE_PASSWORD` should be created in Secrets and variables > Actions section.
 ```bash
 TWINE_PASSWORD : pypi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-5. import the project to readthedocs.org
+6. import the project to readthedocs.org
 
 
-6. publish the library on pypi
+7. publish the library on pypi
 
 ```bas
 alfred publish
