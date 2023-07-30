@@ -1,15 +1,13 @@
-## blueprint-python3
+## blueprint-library-pip
 
-[![ci](https://github.com/FabienArcellier/blueprint-python3/actions/workflows/main.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-python3/actions/workflows/main.yml)
+[![ci](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/ci.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/ci.yml)
 
+blueprint to implement a library in python. This library may be deployed on pip.
 
-blueprint to implement a simple spike with python3
-
-* test python code
-* use jupyter notebook with python dependencies
+* code to share between several applications
+* domain specific library
+* compliant with different python version
 * ...
-
-The implementation is compatible with python 3
 
 ## Getting started
 
@@ -25,7 +23,7 @@ The implementation is compatible with python 3
 You can find the latest version to ...
 
 ```bash
-git clone https://github.com/FabienArcellier/blueprint-python3.git
+git clone https://github.com/FabienArcellier/blueprint-library-pip.git
 ```
 
 ## Usage
@@ -33,7 +31,8 @@ git clone https://github.com/FabienArcellier/blueprint-python3.git
 You can run the application with the following command
 
 ```bash
-python src/app/main.py
+from lib import hello_world
+hello_world()
 ```
 
 ### Run in docker container

@@ -3,15 +3,15 @@
 1. change the project metadata into `./pyproject.toml`
 
 ```toml
-name = "blueprint-python3"
-description = "blueprint to implement a python application"
+name = "blueprint-library-pip"
+description = "blueprint to implement a library in python to deploy on pypi"
 authors = ["Fabien Arcellier <fabien.arcellier@gmail.com>"]
 license = "MIT"
 ```
 
-2. configure the .env file
+2. rename the library package
 
-copy the `.env.template` file into `.env` and change the value of the environment variables to adapt the project behavior between development and production.
+change package name from `srclib` to desired name `src/my_custom_lib`
 
 3. remove the markdown files relative to the blueprint
 
@@ -34,4 +34,11 @@ The ![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg) command shoul
 
 ```markdown
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/...)
+```
+
+
+5. change the package declaration into `pyproject.toml`
+
+```toml
+packages = [{include = "my_custom_lib", from = "src"}]
 ```
