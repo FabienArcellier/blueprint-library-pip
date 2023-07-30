@@ -12,3 +12,10 @@ license = "MIT"
 2. configure the .env file
 
 copy the `.env.example` file into `.env` and change the value of the environment variables to adapt the project behavior between development and production.
+
+3. remove the markdown files relative to the blueprint
+
+```bash
+rm "prepare the blueprint.md" 
+rm "rebuild the blueprint from scratch.md"
+```
