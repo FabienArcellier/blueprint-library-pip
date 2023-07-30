@@ -92,18 +92,18 @@ def publish__twine():
         os.environ['TWINE_USERNAME'] = '__token__'
 
     if password is None:
-        raise UsageError('TWINE_PASSWORD should contains your pypi token to publish fixtup : https://pypi.org/help/#apitoken')
+        raise UsageError('TWINE_PASSWORD should contains your pypi token to publish this library : https://pypi.org/help/#apitoken')
 
     twine = alfred.sh("twine")
     alfred.run(twine, ['upload', '--non-interactive', 'dist/*'])
 
 
 def __version() -> str:
-    pyproject_path = os.path.realpath(os.path.join('..', 'pyproject.toml'))
+    pyproject_path = os.path.realpath('pyproject.toml')
     try:
         with io.open(pyproject_path) as filep:
             pyproject_content = toml.load(filep)
-            poetry = pyproject_content.get('tool.poetry')
+            poetry = pyproject_content.get('tool').get('poetry')
             version = poetry.get('version')
             return version
     except BaseException as exception:
