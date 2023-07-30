@@ -42,3 +42,9 @@ The ![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg) command shoul
 ```toml
 packages = [{include = "my_custom_lib", from = "src"}]
 ```
+
+4. publish the library on pypi
+
+```bas
+alfred publish
+```
