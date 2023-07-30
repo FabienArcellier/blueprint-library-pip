@@ -16,6 +16,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
+toml = "^0.10.2"
 
 [tool.poetry.group.dev.dependencies]
 alfred-cli = "^3.0.0"
