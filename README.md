@@ -37,6 +37,16 @@ from lib import hello_world
 hello_world()
 ```
 
+### Publish the library on pypi
+
+The publication use a tag-based workflow to run the publication on github action. First, a developper tag a commit using `alfred publish`, then github action publish the library on pypi.
+
+The `alfred publish` take the version number from pyproject.toml. The command will raise an error if the current branch is not master, if changes are in progress, or if the tag already exists, if the branch is not synchronized with remote branch
+
+```bash
+alfred publish
+```
+
 ### Run in docker container
 
 You can run this template with docker. The manufactured image can be distributed and used to deploy your application to a production environment.
