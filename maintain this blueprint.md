@@ -20,6 +20,16 @@ poetry add --dev sphinx@latest
 poetry add --dev sphinx-rtd-theme@latest
 ```
 
+## Rebuild the blueprint from scratch
+
+### 2. add the dependencies
+
+```bash
+poetry add --dev toml@latest
+poetry add --dev sphinx@latest
+poetry add --dev sphinx-rtd-theme@latest
+```
+
 ### 3. generate documentation skeleton with sphinx
 
 1. generate the skeleton
@@ -51,4 +61,10 @@ Blueprint-library-pip documentation
    :caption: Contents:
 
    api
+```
+
+### 4. reconfigure gitpod for this repository in README.md : Run in gitpod
+
+```markdown
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/FabienArcellier/blueprint-library-pip)
 ```

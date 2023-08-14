@@ -50,7 +50,7 @@ docker-compose run app
 
 [gitpod](https://www.gitpod.io/) can be used as an IDE. You can load the code inside to try the code.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/FabienArcellier/blueprint-python3)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/FabienArcellier/blueprint-library-pip)
 
 ## Developper guideline
 
