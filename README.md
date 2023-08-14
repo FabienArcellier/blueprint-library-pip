@@ -45,6 +45,12 @@ docker-compose build
 docker-compose run app
 ```
 
+### Run in gitpod
+
+[gitpod](https://www.gitpod.io/) can be used as an IDE. You can load the code inside to try the code.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/FabienArcellier/blueprint-python3)
+
 ## Developper guideline
 
 ### Add a dependency
