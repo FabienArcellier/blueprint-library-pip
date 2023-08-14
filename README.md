@@ -1,6 +1,6 @@
 ## blueprint-library-pip
 
-[![ci](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/ci.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/ci.yml)
+[![ci](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/main.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-library-pip/actions/workflows/main.yml)
 
 blueprint to implement a library in python. This library may be deployed on pip.
 
