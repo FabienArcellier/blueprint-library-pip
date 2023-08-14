@@ -20,7 +20,15 @@ rm "prepare the blueprint.md"
 rm "maintain this blueprint.md"
 ```
 
-4. modify section Run in gitpod in README.md
+4. modify the CI badget for github action in the readme
+
+The github action badge must point to your repo instead of the blueprint for the badge to match your project.
+
+```markdown
+[![ci](https://github.com/{...}/actions/workflows/main.yml/badge.svg)](https://github.com/{...}/actions/workflows/main.yml)
+```
+
+5. modify section Run in gitpod in README.md
 
 The ![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg) command should point to your repository instead of the blueprint one
 
