@@ -19,3 +19,11 @@ copy the `.env.example` file into `.env` and change the value of the environment
 rm "prepare the blueprint.md" 
 rm "maintain this blueprint.md"
 ```
+
+4. modify section Run in gitpod in README.md
+
+The ![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg) command should point to your repository instead of the blueprint one
+
+```markdown
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/...)
+```
