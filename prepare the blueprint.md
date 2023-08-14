@@ -17,5 +17,5 @@ copy the `.env.example` file into `.env` and change the value of the environment
 
 ```bash
 rm "prepare the blueprint.md" 
-rm "rebuild the blueprint from scratch.md"
+rm "maintain this blueprint.md"
 ```
