@@ -98,7 +98,7 @@ $ poetry run alfred ci
 
 I have to regularly rebuild it to update dependencies.
 
-[read rebuild the bluperint from scratch](./rebuild%20the%20blueprint%20from%20scratch.md)
+* [maintain this blueprint](./maintain%20this%20blueprint.md)
 
 ## Contributors
 
