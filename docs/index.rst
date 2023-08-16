@@ -1,8 +1,12 @@
 Blueprint-library-pip documentation
 ===================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+blueprint-library-pip is ...
 
+
+
+.. toctree::
+   :maxdepth: 1
+
+   getting_started
    api
