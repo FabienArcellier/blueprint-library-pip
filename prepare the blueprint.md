@@ -45,20 +45,30 @@ The ![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg) command shoul
 packages = [{include = "my_custom_lib", from = "src"}]
 ```
 
-5. configure the credential of pypi on github repository for github action
+
+6. configure les urls du projet dans `pyproject.toml`
+
+```toml
+[tool.poetry.urls]
+"Source code" = "https://github.com/FabienArcellier/xxxx"
+"Documentation" = "https://xxxx.readthedocs.io/en/latest/"
+"Issue Tracker" = "https://github.com/FabienArcellier/xxxx/issues"
+"Chat" = "https://discord.gg/xxxxx"
+```
+
+7. configure the credential of pypi on github repository for github action
 
 In this step, I should register the token of the pypi account. The token will be used by github action to publish the library. The configuration is done in github settings. The variable `TWINE_PASSWORD` should be created in Secrets and variables > Actions section.
 ```bash
 TWINE_PASSWORD : pypi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-6. import the project to readthedocs.org
-
-7. write the documentation for library
+8. import the project to readthedocs.org to book the name
 
 
-7. publish the library on pypi
+9. publish the library on pypi to book the name
 
 ```bas
 alfred publish
 ```
+
