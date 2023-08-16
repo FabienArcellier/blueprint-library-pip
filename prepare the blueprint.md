@@ -54,6 +54,8 @@ TWINE_PASSWORD : pypi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 6. import the project to readthedocs.org
 
+7. write the documentation for library
+
 
 7. publish the library on pypi
 
