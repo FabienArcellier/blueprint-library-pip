@@ -10,10 +10,7 @@ __pycache__
 /build
 /dist
 *.egg-info
-<<<<<<< HEAD
 /.env
-=======
 
 # Sphinx documentation
 /docs/_build
->>>>>>> c1d5fc8 (implement sphinx documentation)
