@@ -7,7 +7,6 @@ import alfred
 import click
 import toml
 from click import UsageError, Choice
-from plumbum.commands.processes import ProcessExecutionError
 
 @alfred.command("publish", help="tag a new release through github action that trigger pypi publication")
 def publish():
@@ -22,15 +21,14 @@ def publish():
     alfred.run(git, ["fetch"])
 
     current_version: Optional[str] = None
-    try:
-        current_version = git["describe", "--tags", "--abbrev=0"]().strip()
-    except ProcessExecutionError as exception:
-        # happens when no tag exists yet
-        if "fatal: No names found, cannot describe anything." in exception.stderr:
-            current_version = None
-        else:
-            raise
-    git_status: str = git["status"]()
+    _, stdout, stderr = alfred.run(git, ["describe", "--tags", "--abbrev=0"], exit_on_error=False)
+    current_version = stdout.strip()
+    if "fatal: No names found, cannot describe anything." in stderr:
+        current_version = None
+
+
+    _, stdout, _ = alfred.run(git, ["status"])
+    git_status = stdout.strip()
 
     on_master = "On branch master" in git_status
     if not on_master:
