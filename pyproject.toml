@@ -30,8 +30,8 @@ mypy = "^1.20.2"
 pytest = "^9.0.3"
 ruff = "^0.8.6"
 toml = "^0.10.2"
-sphinx = "^6.0.0"
-sphinx-rtd-theme = "^1.2.2"
+sphinx = "^8.0.0" # last version compatible with python 3.10
+sphinx-rtd-theme = "^3.1.0"
 twine = "^4.0.2"
 
 [build-system]

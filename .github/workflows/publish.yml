@@ -7,20 +7,20 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
 
         environment:
             name: pypi
 
         strategy:
           matrix:
-            python-version: ["3.10"]
+            python-version: ["3.12"]
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v6
 
             - name: Set up Python ${{ matrix.python-version }}
-              uses: actions/setup-python@v2
+              uses: actions/setup-python@v6
               with:
                   python-version: ${{ matrix.python-version }}
 
@@ -30,7 +30,6 @@ jobs:
                 poetry install
 
             - name: publish on pypi
-              run: poetry run alfred publish:pypi
+              run: poetry run alfred publish.poetry
               env:
-                TWINE_USERNAME: __token__
-                TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+                POETRY_PYPI_TOKEN_PYPI: ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}

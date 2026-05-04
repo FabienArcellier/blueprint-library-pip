@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'blueprint-library-pip'
-copyright = '2023, Fabien Arcellier'
+copyright = '2026, Fabien Arcellier'
 author = 'Fabien Arcellier'
 
 # -- General configuration ---------------------------------------------------

@@ -8,60 +8,62 @@ import click
 import toml
 from click import UsageError, Choice
 
-@alfred.command("publish", help="tag a new release through github action that trigger pypi publication")
+
+@alfred.command('publish', help='tag a new release through github action that trigger pypi publication')
 def publish():
     """
     tag a release through github actions
 
     >>> $ alfred publish
     """
-    git = alfred.sh("git", "git should be present")
+    git = alfred.sh('git', 'git should be present')
 
     # update the existing tags
-    alfred.run(git, ["fetch"])
+    alfred.run(git, ['fetch'])
 
     current_version: Optional[str] = None
-    _, stdout, stderr = alfred.run(git, ["describe", "--tags", "--abbrev=0"], exit_on_error=False)
+    _, stdout, stderr = alfred.run(git, ['describe', '--tags', '--abbrev=0'], exit_on_error=False)
     current_version = stdout.strip()
-    if "fatal: No names found, cannot describe anything." in stderr:
+    if 'fatal: No names found, cannot describe anything.' in stderr:
         current_version = None
 
-
-    _, stdout, _ = alfred.run(git, ["status"])
+    _, stdout, _ = alfred.run(git, ['status'])
     git_status = stdout.strip()
 
-    on_master = "On branch master" in git_status
+    on_master = 'On branch master' in git_status
     if not on_master:
-        click.echo(click.style("Branch should be on master, use git checkout master", fg="red"))
+        click.echo(click.style('Branch should be on master, use git checkout master', fg='red'))
         click.echo(git_status.strip()[0])
         sys.exit(1)
 
     up_to_date = "Your branch is up to date with 'origin/master'" in git_status
     if not up_to_date:
-        click.echo(click.style("Branch should be up to date with origin/master, push your change to repository", fg="red"))
+        click.echo(
+            click.style('Branch should be up to date with origin/master, push your change to repository', fg='red')
+        )
         sys.exit(1)
 
-    non_commited_changes = "Changes not staged for commit" in git_status or "Changes to be committed" in git_status
+    non_commited_changes = 'Changes not staged for commit' in git_status or 'Changes to be committed' in git_status
     if non_commited_changes:
-        click.echo(click.style("Changes in progress, can't release a new version", fg="red"))
+        click.echo(click.style("Changes in progress, can't release a new version", fg='red'))
         sys.exit(1)
 
     version = __version()
     if current_version == __version():
-        click.echo(click.style(f"Version {version} already exists, update version in pyproject.toml", fg='red'))
+        click.echo(click.style(f'Version {version} already exists, update version in pyproject.toml', fg='red'))
         sys.exit(1)
 
-    click.echo("")
-    click.echo(f"Next release {version} (current: {current_version})")
-    click.echo("")
-    value = click.prompt("Confirm", type=Choice(['y', 'n']), show_choices=True, default='n')
+    click.echo('')
+    click.echo(f'Next release {version} (current: {current_version})')
+    click.echo('')
+    value = click.prompt('Confirm', type=Choice(['y', 'n']), show_choices=True, default='n')
 
     if value == 'y':
         alfred.run(git, ['tag', version])
         alfred.run(git, ['push', 'origin', version])
 
 
-@alfred.command("publish:pypi", help="workflow to release fixtup to pypi")
+@alfred.command('publish:pypi', help='workflow to release fixtup to pypi')
 def publish__pypi():
     """
     workflow to release fixtup current version to pypi
@@ -69,31 +71,28 @@ def publish__pypi():
     >>> $ alfred publish:pypi
     """
     alfred.invoke_command('dist')
-    alfred.invoke_command('publish:twine')
+    alfred.invoke_command('publish.poetry')
 
 
-@alfred.command("publish:twine", help="push fixtup to pypi")
-def publish__twine():
+@alfred.command('publish.poetry', help='push fixtup to pypi')
+def publish__poetry():
     """
-    push fixtup to pypi
+    push fixtup to pypi using poetry
 
     This operation requires you set a pypi publication token as env var
 
-    * TWINE_USERNAME
-    * TWINE_PASSWORD
+    * POETRY_PYPI_TOKEN_PYPI
 
-    >>> $ alfred publish:twine
+    >>> $ alfred publish.poetry
     """
-    username = os.getenv('TWINE_USERNAME', None)
-    password = os.getenv('TWINE_PASSWORD', None)
-    if username is None:
-        os.environ['TWINE_USERNAME'] = '__token__'
+    token = os.getenv('POETRY_PYPI_TOKEN_PYPI', None)
+    if token is None:
+        raise UsageError(
+            'POETRY_PYPI_TOKEN_PYPI should contain your pypi token to publish this library : https://pypi.org/help/#apitoken'
+        )
 
-    if password is None:
-        raise UsageError('TWINE_PASSWORD should contains your pypi token to publish this library : https://pypi.org/help/#apitoken')
-
-    twine = alfred.sh("twine")
-    alfred.run(twine, ['upload', '--non-interactive', 'dist/*'])
+    poetry = alfred.sh('poetry')
+    alfred.run(poetry, ['publish', '--no-interaction'])
 
 
 def __version() -> str:
