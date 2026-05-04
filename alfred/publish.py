@@ -63,7 +63,7 @@ def publish():
         alfred.run(git, ['push', 'origin', version])
 
 
-@alfred.command('publish:pypi', help='workflow to release fixtup to pypi')
+@alfred.command('publish.pypi', help='workflow to release fixtup to pypi')
 def publish__pypi():
     """
     workflow to release fixtup current version to pypi

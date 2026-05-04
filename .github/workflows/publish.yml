@@ -30,6 +30,6 @@ jobs:
                 poetry install
 
             - name: publish on pypi
-              run: poetry run alfred publish.poetry
+              run: poetry run alfred publish.pypi
               env:
                 POETRY_PYPI_TOKEN_PYPI: ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}

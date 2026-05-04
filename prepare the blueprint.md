@@ -58,9 +58,9 @@ packages = [{include = "my_custom_lib", from = "src"}]
 
 7. configure the credential of pypi on github repository for github action
 
-In this step, I should register the token of the pypi account. The token will be used by github action to publish the library. The configuration is done in github settings. The variable `TWINE_PASSWORD` should be created in Secrets and variables > Actions section.
+In this step, I should register the token of the pypi account. The token will be used by github action to publish the library. The configuration is done in github settings. The variable `POETRY_PYPI_TOKEN_PYPI` should be created in Secrets and variables > Actions section.
 ```bash
-TWINE_PASSWORD : pypi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+POETRY_PYPI_TOKEN_PYPI : pypi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 8. import the project to readthedocs.org to book the name
